@@ -1,0 +1,6 @@
+node_modules/
+temporary screenshots/
+package-lock.json
+._*
+.DS_Store
+*.log
