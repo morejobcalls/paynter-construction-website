@@ -4,21 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Paynter Construction — Decks, ADUs, Sheds & Awnings | Loomis, CA</title>
-  <meta name="description" content="Custom decks, ADU tiny homes, sheds & awnings in Loomis, CA. Veteran & family-owned. 30+ years experience. Licensed #847457. Get your free estimate today.">
+  <meta name="description" content="Custom decks, ADUs, sheds & wood awnings in Loomis, CA. Veteran & family-owned. 30+ years experience. Licensed #847457. Get your free estimate today.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: { DEFAULT: '#6B1E2E', dark: '#4D1520', light: '#8B2A3E', muted: '#9B4455' },
-            gold:  '#C4974A',
-            warm:  '#FAF7F4',
-            stone: '#E8E0D8',
+            brand: { DEFAULT: '#6B1E2E', dark: '#4D1520', light: '#8B2A3E' },
+            gold: '#C4974A', warm: '#FAF7F4', stone: '#E8E0D8',
           },
           fontFamily: {
             display: ['Playfair Display', 'Georgia', 'serif'],
-            sans:    ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
           },
         }
       }
@@ -28,68 +26,66 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; color: #1A0D0F; }
-    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+    *{box-sizing:border-box;} html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1A0D0F;}
+    h1,h2,h3{font-family:'Playfair Display',Georgia,serif;}
+    #site-header{transition:box-shadow .3s ease;}
+    #site-header.scrolled{box-shadow:0 2px 24px rgba(107,30,46,.12);}
 
-    #site-header { transition: box-shadow 0.3s ease; }
-    #site-header.scrolled { box-shadow: 0 2px 24px rgba(107,30,46,0.12); }
+    .services-hero{position:relative;min-height:48vh;background:url('images/awning-1.jpg') center 35%/cover no-repeat;}
+    .services-hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(77,21,32,.9) 0%,rgba(107,30,46,.65) 55%,rgba(0,0,0,.25) 100%);}
 
-    .services-hero {
-      position: relative;
-      min-height: 50vh;
-      background: url('images/deck-4.jpg') center 30% / cover no-repeat;
-    }
-    .services-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(105deg, rgba(77,21,32,0.88) 0%, rgba(107,30,46,0.65) 60%, rgba(0,0,0,0.3) 100%);
-    }
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:#6B1E2E;color:#fff;padding:14px 28px;border-radius:6px;font-weight:600;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 16px rgba(107,30,46,.3);text-decoration:none;font-family:'Inter',sans-serif;}
+    .btn-primary:hover{background:#4D1520;transform:translateY(-1px);box-shadow:0 8px 24px rgba(107,30,46,.38);}
+    .btn-gold{display:inline-flex;align-items:center;gap:8px;background:#C4974A;color:#fff;padding:15px 32px;border-radius:6px;font-weight:700;font-size:17px;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(196,151,74,.35);text-decoration:none;font-family:'Inter',sans-serif;}
+    .btn-gold:hover{background:#B0853A;transform:translateY(-2px);}
 
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #6B1E2E; color: #fff;
-      padding: 14px 28px; border-radius: 6px; font-weight: 600;
-      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 16px rgba(107,30,46,0.30);
-      text-decoration: none; font-family: 'Inter', sans-serif;
-    }
-    .btn-primary:hover { background: #4D1520; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(107,30,46,0.38); }
-    .btn-primary:active { transform: translateY(0); }
-    .btn-primary:focus-visible { outline: 3px solid #C4974A; outline-offset: 3px; }
+    .nav-link{position:relative;color:#3D1020;font-weight:500;transition:color .2s;text-decoration:none;}
+    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#6B1E2E;transform:scaleX(0);transition:transform .2s ease;transform-origin:left;}
+    .nav-link:hover{color:#6B1E2E;} .nav-link:hover::after{transform:scaleX(1);}
 
-    .btn-gold {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #C4974A; color: #fff;
-      padding: 15px 32px; border-radius: 6px; font-weight: 700; font-size: 17px;
-      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 20px rgba(196,151,74,0.35);
-      text-decoration: none; font-family: 'Inter', sans-serif;
-    }
-    .btn-gold:hover { background: #B0853A; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,151,74,0.42); }
+    .section-label{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C4974A;}
+    .service-block{scroll-margin-top:80px;}
 
-    .nav-link { position: relative; color: #3D1020; font-weight: 500; transition: color 0.2s; text-decoration: none; }
-    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; right:0; height:2px; background:#6B1E2E; transform:scaleX(0); transition:transform 0.2s ease; transform-origin:left; }
-    .nav-link:hover { color: #6B1E2E; }
-    .nav-link:hover::after { transform: scaleX(1); }
+    /* ── GALLERY CAROUSEL ── */
+    .gallery-wrap{position:relative;border-radius:16px;overflow:hidden;background:#111;box-shadow:0 24px 60px rgba(107,30,46,.18);}
+    .gallery-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .gallery-track::-webkit-scrollbar{display:none;}
+    .gallery-slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:4/3;position:relative;}
+    .gallery-slide img{width:100%;height:100%;object-fit:cover;display:block;}
 
-    .section-label { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C4974A; }
+    /* Nav buttons */
+    .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s,box-shadow .2s;background:rgba(255,255,255,.9);box-shadow:0 2px 12px rgba(0,0,0,.2);}
+    .gallery-btn:hover{background:#fff;transform:translateY(-50%) scale(1.08);box-shadow:0 4px 20px rgba(0,0,0,.25);}
+    .gallery-btn:active{transform:translateY(-50%) scale(.97);}
+    .gallery-btn:focus-visible{outline:3px solid #C4974A;outline-offset:2px;}
+    .gallery-prev{left:14px;} .gallery-next{right:14px;}
+    .gallery-btn svg{width:20px;height:20px;color:#6B1E2E;flex-shrink:0;}
 
-    .service-block { scroll-margin-top: 100px; }
+    /* Dots */
+    .gallery-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px;align-items:center;}
+    .gallery-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;border:none;transition:background .2s,transform .2s;}
+    .gallery-dot.active{background:#fff;transform:scale(1.3);}
+    .gallery-dot:focus-visible{outline:2px solid #C4974A;outline-offset:2px;}
 
-    .photo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-    .photo-grid img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; transition:transform 0.4s ease; }
-    .photo-grid img:hover { transform:scale(1.03); }
-    .photo-grid .wide { grid-column: span 2; }
-    .photo-grid .wide img { aspect-ratio:16/9; }
+    /* Counter badge */
+    .gallery-counter{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:600;font-family:'Inter',sans-serif;padding:4px 12px;border-radius:20px;letter-spacing:.04em;}
 
-    .spec-pill { display:inline-flex; align-items:center; gap:6px; background:#FAF7F4; border:1px solid #E8E0D8; border-radius:9999px; padding:5px 12px; font-size:13px; color:#3D1020; font-weight:500; }
-    .spec-pill svg { color:#6B1E2E; flex-shrink:0; }
+    /* Thumbnail strip */
+    .thumb-strip{display:flex;gap:6px;overflow-x:auto;padding:8px 0 4px;scrollbar-width:thin;scrollbar-color:rgba(107,30,46,.3) transparent;}
+    .thumb-strip::-webkit-scrollbar{height:3px;}
+    .thumb-strip::-webkit-scrollbar-thumb{background:rgba(107,30,46,.3);border-radius:2px;}
+    .thumb-btn{flex:0 0 72px;height:52px;border-radius:6px;overflow:hidden;border:2px solid transparent;cursor:pointer;padding:0;transition:border-color .2s,opacity .2s;}
+    .thumb-btn img{width:100%;height:100%;object-fit:cover;display:block;}
+    .thumb-btn.active{border-color:#6B1E2E;}
+    .thumb-btn:not(.active){opacity:.6;}
+    .thumb-btn:hover:not(.active){opacity:.85;}
+    .thumb-btn:focus-visible{outline:2px solid #C4974A;outline-offset:2px;}
 
-    #mobile-menu { display:none; }
-    #mobile-menu.open { display:block; }
+    .spec-pill{display:inline-flex;align-items:center;gap:6px;background:#FAF7F4;border:1px solid #E8E0D8;border-radius:9999px;padding:5px 12px;font-size:13px;color:#3D1020;font-weight:500;}
 
-    @media (max-width:767px) { .photo-grid { grid-template-columns:1fr 1fr; } .photo-grid .wide { grid-column:span 2; } }
+    #mobile-menu{display:none;} #mobile-menu.open{display:block;}
+    @media(max-width:767px){.gallery-btn{width:36px;height:36px;} .gallery-btn svg{width:16px;height:16px;}}
   </style>
 </head>
 <body class="bg-white">
@@ -102,7 +98,7 @@
         Loomis, CA &amp; Surrounding Areas
       </span>
       <div class="flex items-center gap-6">
-        <a href="mailto:info@paynterconstruction.com" class="flex items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity">
+        <a href="mailto:info@paynterconstruction.com" class="hidden sm:flex items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           info@paynterconstruction.com
         </a>
@@ -119,18 +115,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center gap-3">
-          <div class="flex-shrink-0 w-10 h-10 bg-brand rounded flex items-center justify-center">
+          <div class="w-10 h-10 bg-brand rounded flex items-center justify-center flex-shrink-0">
             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
           </div>
           <div>
             <div class="font-display font-bold text-brand text-base leading-tight">Paynter Construction</div>
-            <div class="text-xs text-gray-500 font-medium">Lic. #847457 &nbsp;·&nbsp; Loomis, CA</div>
+            <div class="text-xs text-gray-500 font-medium">Lic. #847457 · Loomis, CA</div>
           </div>
         </a>
         <nav class="hidden lg:flex items-center gap-8">
           <a href="/" class="nav-link text-sm">Home</a>
           <a href="services.html" class="nav-link text-sm" style="color:#6B1E2E;">Services</a>
-          <a href="/#about" class="nav-link text-sm">About</a>
+          <a href="about.html" class="nav-link text-sm">About</a>
           <a href="/#testimonials" class="nav-link text-sm">Testimonials</a>
           <a href="/#contact" class="nav-link text-sm">Contact</a>
         </nav>
@@ -148,244 +144,316 @@
     </div>
     <div id="mobile-menu" class="lg:hidden border-t border-stone/60 bg-white px-4 pt-3 pb-5 space-y-1">
       <a href="/" class="block py-2.5 px-3 rounded text-brand font-medium hover:bg-warm">Home</a>
-      <a href="services.html" class="block py-2.5 px-3 rounded text-brand font-semibold bg-warm">Services</a>
-      <a href="/#about" class="block py-2.5 px-3 rounded text-brand font-medium hover:bg-warm">About</a>
+      <a href="services.html" class="block py-2.5 px-3 rounded font-semibold bg-warm text-brand">Services</a>
+      <a href="about.html" class="block py-2.5 px-3 rounded text-brand font-medium hover:bg-warm">About</a>
       <a href="/#testimonials" class="block py-2.5 px-3 rounded text-brand font-medium hover:bg-warm">Testimonials</a>
       <a href="/#contact" class="block py-2.5 px-3 rounded text-brand font-medium hover:bg-warm">Contact</a>
-      <div class="pt-3">
-        <a href="/#contact" class="btn-primary w-full justify-center">Get Free Estimate</a>
-      </div>
+      <div class="pt-3"><a href="/#contact" class="btn-primary w-full justify-center">Get Free Estimate</a></div>
     </div>
   </header>
 
-  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <!-- HERO -->
   <section class="services-hero flex items-end">
     <div class="services-hero-overlay"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 w-full">
       <div class="max-w-2xl">
-        <div class="section-label text-gold mb-3">Services</div>
-        <h1 class="font-display text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
-          Everything We Build,<br>
-          <span class="text-gold">Built Right.</span>
-        </h1>
-        <p class="text-white/80 text-lg mb-8">
-          From a simple shed to a full ADU — every project is custom, licensed, and backed by 30+ years of craftsmanship.
-        </p>
+        <div class="section-label text-gold mb-3">Our Work</div>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">Everything We Build,<br><span class="text-gold">Built Right.</span></h1>
+        <p class="text-white/80 text-lg mb-6">Custom decks, ADUs, sheds, and awnings — every project backed by 30+ years of craftsmanship and a team that shows up.</p>
         <div class="flex flex-wrap gap-3">
-          <a href="#decks" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium transition-colors">Decks</a>
-          <a href="#adus" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium transition-colors">ADUs &amp; Tiny Homes</a>
-          <a href="#sheds" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium transition-colors">Sheds</a>
-          <a href="#awnings" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium transition-colors">Awnings</a>
+          <a href="#decks" class="inline-flex items-center gap-2 bg-white/12 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium transition-colors">Decks</a>
+          <a href="#awnings" class="inline-flex items-center gap-2 bg-white/12 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium transition-colors">Awnings</a>
+          <a href="#adus" class="inline-flex items-center gap-2 bg-white/12 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium transition-colors">ADUs &amp; Tiny Homes</a>
+          <a href="#sheds" class="inline-flex items-center gap-2 bg-white/12 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium transition-colors">Sheds</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════ DECKS ══════════════════════════ -->
+  <!-- ═══════════════════════ DECKS ═══════════════════════ -->
   <section id="decks" class="service-block py-20 lg:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-14">
-        <div>
-          <div class="section-label mb-3">Service 01</div>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-5">
-            Custom Decks
-          </h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-5">
-            We build decks of all shapes and sizes — exactly what you're looking for. Whether you want a sprawling entertaining deck with a view, an elevated platform off the back of the house, or something unique to your property, we deliver.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            From material selection to railing style to custom stair layouts, we handle every detail. We also do deck repairs, rebuilds, and dry rot remediation.
-          </p>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-          <!-- Material pills -->
-          <div class="mb-8">
+        <!-- Copy -->
+        <div class="lg:sticky lg:top-28">
+          <div class="section-label mb-3">Service 01</div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-5">Custom Decks</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-5">We build decks of all shapes and sizes — exactly what you're looking for. Whether you want a sprawling entertaining space with a view, an elevated platform off the back of the house, or something completely custom to your property, we deliver.</p>
+          <p class="text-gray-600 leading-relaxed mb-6">From material selection to railing style to stair layouts, we handle every detail. We also do deck repairs, rebuilds, and dry rot remediation.</p>
+          <div class="mb-6">
             <p class="text-sm font-semibold text-gray-700 mb-3">Materials We Work With:</p>
             <div class="flex flex-wrap gap-2">
-              <span class="spec-pill"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Redwood</span>
-              <span class="spec-pill"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Trex / Composite</span>
-              <span class="spec-pill"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Vinyl</span>
-              <span class="spec-pill"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Aluminum</span>
-              <span class="spec-pill"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Hog Panels</span>
-              <span class="spec-pill"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cable Railing</span>
+              <span class="spec-pill"><svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Redwood</span>
+              <span class="spec-pill"><svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Trex / Composite</span>
+              <span class="spec-pill"><svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Vinyl</span>
+              <span class="spec-pill"><svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Aluminum</span>
+              <span class="spec-pill"><svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Hog Panels</span>
+              <span class="spec-pill"><svg class="w-3.5 h-3.5 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cable Railing</span>
             </div>
           </div>
-
-          <a href="/#contact" class="btn-primary">
-            Get a Deck Estimate
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
+          <a href="/#contact" class="btn-primary">Get a Deck Estimate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
 
-        <!-- Primary photo -->
-        <div class="rounded-2xl overflow-hidden shadow-2xl h-80 lg:h-auto" style="box-shadow:0 24px 60px rgba(107,30,46,0.16);">
-          <img src="images/hero.jpg" alt="Finished deck with fire pit and hillside view" class="w-full h-full object-cover">
+        <!-- Gallery -->
+        <div>
+          <div class="gallery-wrap" id="gallery-decks">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="images/hero.jpg"   alt="Deck with fire pit and hillside view"></div>
+              <div class="gallery-slide"><img src="images/deck-1.jpg" alt="Elevated deck with black railing and stairs"></div>
+              <div class="gallery-slide"><img src="images/deck-2.jpg" alt="Hot tub deck with panoramic valley view"></div>
+              <div class="gallery-slide"><img src="images/deck-4.jpg" alt="Curved elevated deck seen from above"></div>
+              <div class="gallery-slide"><img src="images/deck-5.jpg" alt="Redwood deck with mesh hog-panel railing"></div>
+              <div class="gallery-slide"><img src="images/deck-6.jpg" alt="Pool deck with potted flowers and railing"></div>
+              <div class="gallery-slide"><img src="images/deck-7.jpg" alt="Composite deck with hot tub and view"></div>
+              <div class="gallery-slide"><img src="images/deck-8.jpg" alt="Hot tub on deck overlooking forest"></div>
+              <div class="gallery-slide"><img src="images/deck-3.jpg" alt="Long natural wood deck adjacent to structure"></div>
+            </div>
+            <button class="gallery-btn gallery-prev" aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="gallery-btn gallery-next" aria-label="Next photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+            <div class="gallery-dots">
+              <button class="gallery-dot active" aria-label="Photo 1"></button>
+              <button class="gallery-dot" aria-label="Photo 2"></button>
+              <button class="gallery-dot" aria-label="Photo 3"></button>
+              <button class="gallery-dot" aria-label="Photo 4"></button>
+              <button class="gallery-dot" aria-label="Photo 5"></button>
+              <button class="gallery-dot" aria-label="Photo 6"></button>
+              <button class="gallery-dot" aria-label="Photo 7"></button>
+              <button class="gallery-dot" aria-label="Photo 8"></button>
+              <button class="gallery-dot" aria-label="Photo 9"></button>
+            </div>
+            <div class="gallery-counter">1 / 9</div>
+          </div>
+          <!-- Thumbnail strip -->
+          <div class="thumb-strip mt-2" id="thumbs-decks">
+            <button class="thumb-btn active"><img src="images/hero.jpg"   alt=""></button>
+            <button class="thumb-btn"><img src="images/deck-1.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/deck-2.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/deck-4.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/deck-5.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/deck-6.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/deck-7.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/deck-8.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/deck-3.jpg" alt=""></button>
+          </div>
         </div>
-      </div>
-
-      <!-- Photo grid -->
-      <div class="photo-grid">
-        <div class="wide overflow-hidden rounded-xl"><img src="images/deck-1.jpg" alt="Elevated deck with black aluminum railing"></div>
-        <div class="overflow-hidden rounded-xl"><img src="images/deck-2.jpg" alt="Hot tub deck with panoramic view"></div>
-        <div class="overflow-hidden rounded-xl"><img src="images/deck-5.jpg" alt="Natural redwood deck with mesh railing"></div>
-        <div class="wide overflow-hidden rounded-xl"><img src="images/deck-4.jpg" alt="Curved round deck overlooking valley"></div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════ ADUs ══════════════════════════ -->
-  <section id="adus" class="service-block py-20 lg:py-28 bg-warm">
+  <!-- ═══════════════════════ AWNINGS ═══════════════════════ -->
+  <section id="awnings" class="service-block py-20 lg:py-28 bg-warm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-        <!-- Primary photo first on desktop right -->
+        <!-- Gallery first on this row -->
         <div class="order-2 lg:order-1">
-          <div class="rounded-2xl overflow-hidden shadow-2xl h-72 lg:h-96" style="box-shadow:0 24px 60px rgba(107,30,46,0.14);">
-            <img src="images/deck-3.jpg" alt="Custom ADU built by Paynter Construction" class="w-full h-full object-cover">
+          <div class="gallery-wrap" id="gallery-awnings">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="images/awning-1.jpg" alt="Completed timber-frame covered structure overview"></div>
+              <div class="gallery-slide"><img src="images/awning-2.jpg" alt="Finished deck and awning with crew and dog"></div>
+              <div class="gallery-slide"><img src="images/awning-3.jpg" alt="Timber awning frame under construction"></div>
+              <div class="gallery-slide"><img src="images/awning-4.jpg" alt="Team working on awning structure"></div>
+              <div class="gallery-slide"><img src="images/awning-5.jpg" alt="Awning and stair connection being built"></div>
+              <div class="gallery-slide"><img src="images/process-9.jpg" alt="Post installation near house"></div>
+            </div>
+            <button class="gallery-btn gallery-prev" aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="gallery-btn gallery-next" aria-label="Next photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+            <div class="gallery-dots">
+              <button class="gallery-dot active" aria-label="Photo 1"></button>
+              <button class="gallery-dot" aria-label="Photo 2"></button>
+              <button class="gallery-dot" aria-label="Photo 3"></button>
+              <button class="gallery-dot" aria-label="Photo 4"></button>
+              <button class="gallery-dot" aria-label="Photo 5"></button>
+              <button class="gallery-dot" aria-label="Photo 6"></button>
+            </div>
+            <div class="gallery-counter">1 / 6</div>
           </div>
-          <div class="grid grid-cols-2 gap-3 mt-3">
-            <div class="rounded-xl overflow-hidden h-36"><img src="images/deck-wip.jpg" alt="ADU construction in progress" class="w-full h-full object-cover"></div>
-            <div class="rounded-xl overflow-hidden h-36"><img src="images/deck-6.jpg" alt="Completed outdoor living space" class="w-full h-full object-cover"></div>
+          <div class="thumb-strip mt-2" id="thumbs-awnings">
+            <button class="thumb-btn active"><img src="images/awning-1.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/awning-2.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/awning-3.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/awning-4.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/awning-5.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/process-9.jpg" alt=""></button>
           </div>
         </div>
 
-        <div class="order-1 lg:order-2">
+        <!-- Copy -->
+        <div class="order-1 lg:order-2 lg:sticky lg:top-28">
           <div class="section-label mb-3">Service 02</div>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-5">
-            ADUs &amp; Tiny Homes
-          </h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-5">
-            Paynter Construction is a <strong>Tiny Home Preferred Contractor</strong>. We've built a multitude of ADUs across our area — and we handle everything from site work to plans and permits.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-5">
-            Whether you're housing aging parents, a returning college grad, or generating rental income, we design with a sense of home. Custom-built on your property, or delivered via trailer — we make it work.
-          </p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-5">Custom Awnings</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-5">We specialize in custom wood awnings — built on-site from timber or fabricated off-site and delivered. The right awning does double duty: it keeps the brutal summer sun from blasting through your windows, and shields your deck, patio, and outdoor furniture from the harsh winter weather for years to come.</p>
+          <p class="text-gray-600 leading-relaxed mb-6">Every awning is designed to match your home's style and property layout. No two are identical.</p>
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span class="text-gray-700 text-sm">Reduces interior cooling costs in summer</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span class="text-gray-700 text-sm">Extends outdoor living space year-round</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span class="text-gray-700 text-sm">Protects doors, windows &amp; siding from UV and moisture</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span class="text-gray-700 text-sm">Built on-site or delivered — your preference</span>
+            </div>
+          </div>
+          <a href="/#contact" class="btn-primary">Get an Awning Estimate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ═══════════════════════ ADUs ═══════════════════════ -->
+  <section id="adus" class="service-block py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <!-- Copy -->
+        <div class="lg:sticky lg:top-28">
+          <div class="section-label mb-3">Service 03</div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-5">ADUs &amp; Tiny Homes</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-5">Paynter Construction is a <strong>Tiny Home Preferred Contractor</strong>. We've built ADUs across the foothills — from aging parent suites to rental units to young family spaces — and we manage everything from site work to permits to final walkthrough.</p>
+          <p class="text-gray-600 leading-relaxed mb-6">Your ADU can be custom-built on your property or delivered via trailer. No matter the need, we design with a sense of home. Every detail planned with comfort and livability in mind.</p>
           <div class="space-y-3 mb-8">
             <div class="flex items-start gap-3">
               <svg class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <div>
-                <div class="font-semibold text-gray-800 text-sm">Site work &amp; permits managed</div>
-                <div class="text-gray-500 text-sm">We coordinate with the county so you don't have to.</div>
-              </div>
+              <div><div class="font-semibold text-gray-800 text-sm">Site work &amp; permits managed for you</div><div class="text-gray-500 text-xs">We coordinate with the county so you don't have to.</div></div>
             </div>
             <div class="flex items-start gap-3">
               <svg class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <div>
-                <div class="font-semibold text-gray-800 text-sm">Custom on-site or trailer delivery</div>
-                <div class="text-gray-500 text-sm">Flexible build options to match your property and budget.</div>
-              </div>
+              <div><div class="font-semibold text-gray-800 text-sm">On-site build or trailer delivery</div><div class="text-gray-500 text-xs">Flexible options to match your property and timeline.</div></div>
             </div>
             <div class="flex items-start gap-3">
               <svg class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <div>
-                <div class="font-semibold text-gray-800 text-sm">Concept to move-in ready</div>
-                <div class="text-gray-500 text-sm">From the first design sketch to handing over the keys.</div>
-              </div>
+              <div><div class="font-semibold text-gray-800 text-sm">Concept to move-in ready</div><div class="text-gray-500 text-xs">From the first design sketch to handing over the keys.</div></div>
             </div>
           </div>
+          <a href="/#contact" class="btn-primary">Ask About ADUs <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
 
-          <a href="/#contact" class="btn-primary">
-            Ask About ADUs
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
+        <!-- Gallery -->
+        <div>
+          <div class="gallery-wrap" id="gallery-adus">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="images/deck-3.jpg"    alt="Deck and structure build — ADU adjacent project"></div>
+              <div class="gallery-slide"><img src="images/owner.jpg"     alt="Chip surveying a new ADU site"></div>
+              <div class="gallery-slide"><img src="images/process-3.jpg" alt="Chip measuring lumber for a project"></div>
+              <div class="gallery-slide"><img src="images/process-2.jpg" alt="Crew cutting framing lumber"></div>
+              <div class="gallery-slide"><img src="images/process-4.jpg" alt="Full crew on the job site"></div>
+            </div>
+            <button class="gallery-btn gallery-prev" aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="gallery-btn gallery-next" aria-label="Next photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+            <div class="gallery-dots">
+              <button class="gallery-dot active" aria-label="Photo 1"></button>
+              <button class="gallery-dot" aria-label="Photo 2"></button>
+              <button class="gallery-dot" aria-label="Photo 3"></button>
+              <button class="gallery-dot" aria-label="Photo 4"></button>
+              <button class="gallery-dot" aria-label="Photo 5"></button>
+            </div>
+            <div class="gallery-counter">1 / 5</div>
+          </div>
+          <div class="thumb-strip mt-2" id="thumbs-adus">
+            <button class="thumb-btn active"><img src="images/deck-3.jpg"    alt=""></button>
+            <button class="thumb-btn"><img src="images/owner.jpg"     alt=""></button>
+            <button class="thumb-btn"><img src="images/process-3.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/process-2.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/process-4.jpg" alt=""></button>
+          </div>
+          <p class="text-xs text-gray-400 mt-3 italic">ADU project photos added as new builds complete. Call us to discuss your project.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════ SHEDS ══════════════════════════ -->
-  <section id="sheds" class="service-block py-20 lg:py-28 bg-white">
+  <!-- ═══════════════════════ SHEDS ═══════════════════════ -->
+  <section id="sheds" class="service-block py-20 lg:py-28 bg-warm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <div class="section-label mb-3">Service 03</div>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-5">
-            Custom Sheds
-          </h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-5">
-            We build sheds that serve your purpose — not just something thrown together from a box store kit. If you have tools that need a real home, garden supplies, horse tack, holiday decorations, or a workshop space, we'll build it right.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-8">
-            Sized to your lot, built to code, and designed to last decades. Tell us what you need and we'll make it happen.
-          </p>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <!-- Gallery first -->
+        <div class="order-2 lg:order-1">
+          <div class="gallery-wrap" id="gallery-sheds">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="images/deck-wip.jpg"  alt="Precision framing and construction in progress"></div>
+              <div class="gallery-slide"><img src="images/process-1.jpg" alt="Detail work on construction project"></div>
+              <div class="gallery-slide"><img src="images/process-7.jpg" alt="Two crew members working precisely together"></div>
+              <div class="gallery-slide"><img src="images/process-8.jpg" alt="Worker with saw — precise cuts every time"></div>
+              <div class="gallery-slide"><img src="images/process-6.jpg" alt="Overhead view of crew at work"></div>
+            </div>
+            <button class="gallery-btn gallery-prev" aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="gallery-btn gallery-next" aria-label="Next photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+            <div class="gallery-dots">
+              <button class="gallery-dot active" aria-label="Photo 1"></button>
+              <button class="gallery-dot" aria-label="Photo 2"></button>
+              <button class="gallery-dot" aria-label="Photo 3"></button>
+              <button class="gallery-dot" aria-label="Photo 4"></button>
+              <button class="gallery-dot" aria-label="Photo 5"></button>
+            </div>
+            <div class="gallery-counter">1 / 5</div>
+          </div>
+          <div class="thumb-strip mt-2" id="thumbs-sheds">
+            <button class="thumb-btn active"><img src="images/deck-wip.jpg"  alt=""></button>
+            <button class="thumb-btn"><img src="images/process-1.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/process-7.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/process-8.jpg" alt=""></button>
+            <button class="thumb-btn"><img src="images/process-6.jpg" alt=""></button>
+          </div>
+          <p class="text-xs text-gray-400 mt-3 italic">Shed project photos added as new builds complete. Call us to discuss your project.</p>
+        </div>
+
+        <!-- Copy -->
+        <div class="order-1 lg:order-2 lg:sticky lg:top-28">
+          <div class="section-label mb-3">Service 04</div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-5">Custom Sheds</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-5">We build sheds that actually serve your purpose — not a generic box-store kit slapped together. Whether you need a real tool shed, a garden space, horse tack storage, a workshop, or a spot for holiday overflow, we build it sized to your lot and built to last.</p>
+          <p class="text-gray-600 leading-relaxed mb-6">Every shed we build is to code, constructed with the same craftsmanship as our decks and structures. Tell us what you need to put in it, and we'll design around that.</p>
           <div class="grid sm:grid-cols-2 gap-4 mb-8">
-            <div class="bg-warm border border-stone/40 rounded-xl p-4">
-              <div class="font-semibold text-gray-800 mb-1 text-sm">Tool &amp; Equipment Storage</div>
-              <div class="text-gray-500 text-xs">Built-in shelving, reinforced floors, secure doors.</div>
+            <div class="bg-white border border-stone/40 rounded-xl p-4">
+              <div class="font-semibold text-gray-800 mb-1 text-sm">Tool &amp; Equipment</div>
+              <div class="text-gray-500 text-xs">Built-in shelving, reinforced floors, secure entry.</div>
             </div>
-            <div class="bg-warm border border-stone/40 rounded-xl p-4">
-              <div class="font-semibold text-gray-800 mb-1 text-sm">Garden &amp; Hobby Sheds</div>
-              <div class="text-gray-500 text-xs">Potting benches, windows, ventilation included.</div>
+            <div class="bg-white border border-stone/40 rounded-xl p-4">
+              <div class="font-semibold text-gray-800 mb-1 text-sm">Garden &amp; Hobby</div>
+              <div class="text-gray-500 text-xs">Potting benches, windows, ventilation built in.</div>
             </div>
-            <div class="bg-warm border border-stone/40 rounded-xl p-4">
+            <div class="bg-white border border-stone/40 rounded-xl p-4">
               <div class="font-semibold text-gray-800 mb-1 text-sm">Horse Tack &amp; Feed</div>
               <div class="text-gray-500 text-xs">Rodent-resistant, easy-clean, functional layout.</div>
             </div>
-            <div class="bg-warm border border-stone/40 rounded-xl p-4">
+            <div class="bg-white border border-stone/40 rounded-xl p-4">
               <div class="font-semibold text-gray-800 mb-1 text-sm">Workshop &amp; Studio</div>
               <div class="text-gray-500 text-xs">Electrical rough-in available, insulated walls.</div>
             </div>
           </div>
-          <a href="/#contact" class="btn-primary">
-            Get a Shed Quote
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-        <div class="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-[480px]" style="box-shadow:0 24px 60px rgba(107,30,46,0.13);">
-          <img src="images/deck-wip.jpg" alt="Quality shed construction by Paynter" class="w-full h-full object-cover">
+          <a href="/#contact" class="btn-primary">Get a Shed Quote <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════ AWNINGS ══════════════════════════ -->
-  <section id="awnings" class="service-block py-20 lg:py-28 bg-warm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <!-- Photo -->
-        <div class="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-[440px]" style="box-shadow:0 24px 60px rgba(107,30,46,0.13);">
-          <img src="images/deck-6.jpg" alt="Custom wood awning by Paynter Construction" class="w-full h-full object-cover">
-        </div>
-
-        <div>
-          <div class="section-label mb-3">Service 04</div>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-5">
-            Custom Awnings
-          </h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-5">
-            We specialize in custom wood awnings that protect your home and outdoor spaces year-round. Built on-site or fabricated off-site and delivered — your choice.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-8">
-            The right awning does double duty: it keeps the brutal summer sun from blasting through your windows, and shields your deck, patio, or outdoor furniture from the harsh winter weather for many years to come.
-          </p>
-          <div class="space-y-3 mb-8">
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <span class="text-gray-700 text-sm">Reduces interior cooling costs in the summer</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <span class="text-gray-700 text-sm">Extends usable outdoor living space into the rain season</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <span class="text-gray-700 text-sm">Protects doors, windows, and siding from UV and moisture</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <span class="text-gray-700 text-sm">Custom sizes and styles to match your home</span>
-            </div>
-          </div>
-          <a href="/#contact" class="btn-primary">
-            Get an Awning Estimate
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ ALSO WE DO ══════════════════════════ -->
+  <!-- ADDITIONAL SERVICES -->
   <section class="py-16 bg-white border-y border-stone/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
@@ -405,43 +473,35 @@
             <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           </div>
           <h3 class="font-semibold text-gray-800 mb-1">Dry Rot Repair</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">We identify and remove all dry rot before it spreads, then rebuild with pressure-treated lumber.</p>
+          <p class="text-gray-500 text-xs leading-relaxed">Identify, remove, and rebuild — we stop dry rot before it spreads through your structure.</p>
         </div>
         <div class="bg-warm rounded-xl p-6">
           <div class="w-10 h-10 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-3">
             <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
           <h3 class="font-semibold text-gray-800 mb-1">Termite Damage Repair</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">Post-treatment structural repair and replacement of termite-damaged framing and decking.</p>
+          <p class="text-gray-500 text-xs leading-relaxed">Post-treatment structural repair and replacement of damaged framing and decking.</p>
         </div>
         <div class="bg-warm rounded-xl p-6">
           <div class="w-10 h-10 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-3">
             <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
           <h3 class="font-semibold text-gray-800 mb-1">General Construction</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">Have a project that doesn't fit neatly into a box? Call us. If it's wood and outdoors, we can probably help.</p>
+          <p class="text-gray-500 text-xs leading-relaxed">If it's wood and outdoors, we can probably help. Call and describe your project.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════ FINAL CTA ══════════════════════════ -->
+  <!-- FINAL CTA -->
   <section class="py-20 bg-brand relative overflow-hidden">
     <div class="absolute inset-0 opacity-5" style="background-image:url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");"></div>
-    <div class="relative max-w-4xl mx-auto px-4 text-center">
-      <div class="section-label text-gold mb-4">Ready to Build?</div>
-      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
-        From Concept to Construction,<br>We've Got You Covered.
-      </h2>
-      <p class="text-white/75 text-lg mb-10 max-w-xl mx-auto">
-        Free estimates. Flexible scheduling. You deal directly with Chip — no sales reps, no runaround.
-      </p>
+    <div class="relative max-w-3xl mx-auto px-4 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-5">From Concept to Construction,<br>We've Got You Covered.</h2>
+      <p class="text-white/75 text-lg mb-8">Free estimates. You talk to Chip directly. No sales reps, no runaround.</p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/#contact" class="btn-gold text-base">
-          Get My Free Estimate
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-        <a href="tel:9168022399" style="display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(255,255,255,0.7);color:#fff;padding:15px 28px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none;transition:all 0.2s;">
+        <a href="/#contact" class="btn-gold">Get My Free Estimate <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="tel:9168022399" style="display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(255,255,255,.7);color:#fff;padding:15px 28px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none;">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           Call (916) 316-2642
         </a>
@@ -463,7 +523,7 @@
               <div class="text-gray-400 text-xs">License #847457</div>
             </div>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed max-w-xs mb-4">Veteran &amp; family-owned construction serving Loomis and the Sacramento foothills for over 30 years.</p>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs mb-4">Veteran &amp; family-owned. Serving Loomis and the Sacramento foothills for 30+ years.</p>
           <a href="tel:9168022399" class="inline-flex items-center gap-2 text-gold font-semibold hover:text-gold/80 transition-colors text-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             (916) 316-2642
@@ -474,35 +534,90 @@
           <ul class="space-y-2">
             <li><a href="/" class="text-gray-400 hover:text-white transition-colors text-sm">Home</a></li>
             <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors text-sm">Services</a></li>
-            <li><a href="/#about" class="text-gray-400 hover:text-white transition-colors text-sm">About</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors text-sm">About</a></li>
             <li><a href="/#contact" class="text-gray-400 hover:text-white transition-colors text-sm">Get an Estimate</a></li>
           </ul>
         </div>
         <div>
           <div class="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-4">Services</div>
           <ul class="space-y-2">
-            <li><a href="#decks" class="text-gray-400 hover:text-white transition-colors text-sm">Decks</a></li>
-            <li><a href="#adus" class="text-gray-400 hover:text-white transition-colors text-sm">ADUs &amp; Tiny Homes</a></li>
-            <li><a href="#sheds" class="text-gray-400 hover:text-white transition-colors text-sm">Sheds</a></li>
+            <li><a href="#decks"   class="text-gray-400 hover:text-white transition-colors text-sm">Decks</a></li>
             <li><a href="#awnings" class="text-gray-400 hover:text-white transition-colors text-sm">Awnings</a></li>
+            <li><a href="#adus"    class="text-gray-400 hover:text-white transition-colors text-sm">ADUs &amp; Tiny Homes</a></li>
+            <li><a href="#sheds"   class="text-gray-400 hover:text-white transition-colors text-sm">Sheds</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-8 flex flex-wrap items-center justify-between gap-4">
+      <div class="border-t border-gray-800 pt-8">
         <p class="text-gray-500 text-sm">© 2026 Paynter Construction, Inc. · Loomis, CA · Lic. #847457</p>
-        <a href="mailto:info@paynterconstruction.com" class="text-gray-500 hover:text-gray-300 transition-colors text-sm">info@paynterconstruction.com</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // ── Header scroll shadow ──
     const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('open');
-    });
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+    document.getElementById('menu-toggle').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+
+    // ── Gallery carousel ──
+    function initGallery(galleryId, thumbsId) {
+      const gallery = document.getElementById(galleryId);
+      const thumbsEl = document.getElementById(thumbsId);
+      if (!gallery) return;
+
+      const track   = gallery.querySelector('.gallery-track');
+      const slides  = gallery.querySelectorAll('.gallery-slide');
+      const dots    = gallery.querySelectorAll('.gallery-dot');
+      const counter = gallery.querySelector('.gallery-counter');
+      const prevBtn = gallery.querySelector('.gallery-prev');
+      const nextBtn = gallery.querySelector('.gallery-next');
+      const thumbs  = thumbsEl ? thumbsEl.querySelectorAll('.thumb-btn') : [];
+      let current = 0;
+      let scrollTimeout;
+
+      function update(idx) {
+        current = ((idx % slides.length) + slides.length) % slides.length;
+        track.scrollTo({ left: current * track.clientWidth, behavior: 'smooth' });
+        sync(current);
+      }
+
+      function sync(idx) {
+        dots.forEach((d, i)   => d.classList.toggle('active', i === idx));
+        thumbs.forEach((t, i) => t.classList.toggle('active', i === idx));
+        if (counter) counter.textContent = `${idx + 1} / ${slides.length}`;
+        // scroll thumbnail into view
+        if (thumbsEl && thumbs[idx]) {
+          thumbs[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
+      }
+
+      prevBtn?.addEventListener('click', () => update(current - 1));
+      nextBtn?.addEventListener('click', () => update(current + 1));
+      dots.forEach((d, i) => d.addEventListener('click', () => update(i)));
+      thumbs.forEach((t, i) => t.addEventListener('click', () => update(i)));
+
+      // Sync on native scroll (touch swipe)
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const idx = Math.round(track.scrollLeft / track.clientWidth);
+          if (idx !== current) { current = idx; sync(current); }
+        }, 80);
+      }, { passive: true });
+
+      // Keyboard when gallery is focused
+      gallery.setAttribute('tabindex', '0');
+      gallery.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); update(current - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); update(current + 1); }
+      });
+    }
+
+    initGallery('gallery-decks',   'thumbs-decks');
+    initGallery('gallery-awnings', 'thumbs-awnings');
+    initGallery('gallery-adus',    'thumbs-adus');
+    initGallery('gallery-sheds',   'thumbs-sheds');
   </script>
 </body>
 </html>
