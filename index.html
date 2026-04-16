@@ -912,22 +912,20 @@
       utmKeys.forEach(k => { utmData[k] = sessionStorage.getItem(k) || ''; });
 
       const payload = {
-        firstName:  fname,
-        lastName:   lname,
-        phone:      phone,
-        email:      document.getElementById('email').value.trim(),
-        source:     'Website',
-        tags:       ['website-lead'],
-        customData: {
-          service:      service,
-          message:      document.getElementById('message').value.trim(),
-          page_url:     window.location.href,
-          utm_source:   utmData.utm_source,
-          utm_medium:   utmData.utm_medium,
-          utm_campaign: utmData.utm_campaign,
-          utm_content:  utmData.utm_content,
-          utm_term:     utmData.utm_term
-        }
+        firstName:    fname,
+        lastName:     lname,
+        phone:        phone,
+        email:        document.getElementById('email').value.trim(),
+        source:       'Website',
+        tags:         ['website-lead'],
+        service:      service,
+        message:      document.getElementById('message').value.trim(),
+        page_url:     window.location.href,
+        utm_source:   utmData.utm_source,
+        utm_medium:   utmData.utm_medium,
+        utm_campaign: utmData.utm_campaign,
+        utm_content:  utmData.utm_content,
+        utm_term:     utmData.utm_term
       };
 
       try {
