@@ -1027,6 +1027,9 @@
         utm_term:     utmData.utm_term
       };
 
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'form_submit_attempt', form: 'estimate' });
+
       try {
         const res = await fetch(GHL_WEBHOOK, {
           method:  'POST',
@@ -1034,12 +1037,31 @@
           body:    JSON.stringify(payload)
         });
         if (!res.ok) throw new Error('server');
+        window.dataLayer.push({ event: 'form_submit_success', form: 'estimate' });
         form.style.display = 'none';
         document.getElementById('form-success').classList.remove('hidden');
       } catch (err) {
+        window.dataLayer.push({ event: 'form_submit_failure', form: 'estimate' });
         submitBtn.disabled = false;
         submitBtn.innerHTML = 'Send My Request \u2014 It\u2019s Free <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>';
-        errBox.textContent = 'Something went wrong. Please try again or call us at (916) 316-2642.';
+
+        // Build a prefilled mailto so no lead data is lost if the webhook fails
+        const mailBody = [
+          'Name: ' + fname + ' ' + lname,
+          'Phone: ' + phone,
+          'Email: ' + payload.email,
+          'Address: ' + address,
+          'Project type: ' + service,
+          'Details: ' + payload.project_details,
+          '',
+          'Page: ' + payload.page_url
+        ].join('\n');
+        const mailtoHref = 'mailto:info@paynterconstruction.com'
+          + '?subject=' + encodeURIComponent('Estimate request from website')
+          + '&body=' + encodeURIComponent(mailBody);
+        errBox.innerHTML = 'Something went wrong. Please try again, '
+          + '<a href="' + mailtoHref + '" class="font-semibold underline">email us directly</a>, '
+          + 'or call <a href="tel:9163162642" class="font-semibold underline">(916) 316-2642</a>.';
         errBox.classList.remove('hidden');
       }
     });
