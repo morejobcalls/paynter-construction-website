@@ -7,6 +7,35 @@
   <meta name="description" content="Custom decks, ADUs, sheds & wood awnings in Loomis, CA. Family-owned, licensed since 1997 (#847457). Get your free estimate today.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DPTZYX569"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2DPTZYX569');
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'click_to_call', { phone: el.getAttribute('href').replace('tel:', '') });
+        });
+      });
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'click_to_email', { email: el.getAttribute('href').replace('mailto:', '').split('?')[0] });
+        });
+      });
+      var form = document.getElementById('estimate-form');
+      if (form) {
+        form.addEventListener('submit', function() {
+          gtag('event', 'form_submit', { form_name: 'estimate-form' });
+        });
+      }
+    });
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
