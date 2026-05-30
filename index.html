@@ -1020,8 +1020,9 @@
       else                         this.value = '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
     });
 
-    // Direct email submission — opens the user's email client prefilled with the form data
+    // Form submission — POST lead to GHL (Leads program). Email/phone are fallbacks only if the POST fails.
     const SUBMIT_EMAIL = 'info@paynterconstruction.com';
+    const GHL_WEBHOOK  = 'https://services.leadconnectorhq.com/hooks/tYXnDMjIvOfuo3Y6UNKw/webhook-trigger/3c38ac75-80c4-4044-a93f-c47170e489f6';
 
     document.getElementById('estimate-form').addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -1080,29 +1081,40 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'form_submit_attempt', form: 'estimate' });
 
-      // Build a prefilled email to Paynter Construction
-      const mailBody = [
-        'Name: ' + fname + ' ' + lname,
-        'Phone: ' + phone,
-        'Email: ' + payload.email,
-        'Address: ' + address,
-        'Project type: ' + service,
-        'Details: ' + payload.project_details,
-        '',
-        'Sent from: ' + payload.page_url
-      ].join('\n');
-      const mailtoHref = 'mailto:' + SUBMIT_EMAIL
-        + '?subject=' + encodeURIComponent('Estimate request from website')
-        + '&body=' + encodeURIComponent(mailBody);
+      try {
+        const res = await fetch(GHL_WEBHOOK, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error('server');
+        window.dataLayer.push({ event: 'form_submit_success', form: 'estimate' });
+        form.style.display = 'none';
+        document.getElementById('form-success').classList.remove('hidden');
+      } catch (err) {
+        window.dataLayer.push({ event: 'form_submit_failure', form: 'estimate' });
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send My Request — It’s Free <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>';
 
-      window.dataLayer.push({ event: 'form_submit_success', form: 'estimate' });
-
-      // Open the user's email client with the prefilled message
-      window.location.href = mailtoHref;
-
-      // Show confirmation on the page so the user knows to hit Send in their mail app
-      form.style.display = 'none';
-      document.getElementById('form-success').classList.remove('hidden');
+        // Fallback so no lead data is lost if the webhook is unreachable
+        const mailBody = [
+          'Name: ' + fname + ' ' + lname,
+          'Phone: ' + phone,
+          'Email: ' + payload.email,
+          'Address: ' + address,
+          'Project type: ' + service,
+          'Details: ' + payload.project_details,
+          '',
+          'Sent from: ' + payload.page_url
+        ].join('\n');
+        const mailtoHref = 'mailto:' + SUBMIT_EMAIL
+          + '?subject=' + encodeURIComponent('Estimate request from website')
+          + '&body=' + encodeURIComponent(mailBody);
+        errBox.innerHTML = 'Something went wrong. Please try again, '
+          + '<a href="' + mailtoHref + '" class="font-semibold underline">email us directly</a>, '
+          + 'or call <a href="tel:9163162642" class="font-semibold underline">(916) 316-2642</a>.';
+        errBox.classList.remove('hidden');
+      }
     });
   </script>
 </body>
