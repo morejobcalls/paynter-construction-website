@@ -905,11 +905,13 @@
               <select id="service" name="service" required
                 class="w-full px-4 py-3 border border-stone/60 rounded-lg text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-colors bg-white">
                 <option value="" disabled selected>Select a service…</option>
-                <option>Deck</option>
-                <option>ADU / Tiny Home</option>
+                <option>New Deck</option>
+                <option>Deck Repair</option>
+                <option>Deck Replacement</option>
+                <option value="ADU / Tiny House">ADU / Tiny Home</option>
                 <option>Shed</option>
                 <option>Awning</option>
-                <option>Multiple / Not Sure</option>
+                <option value="Multiple / Not sure">Multiple / Not Sure</option>
               </select>
             </div>
             <div>
@@ -917,6 +919,12 @@
               <textarea id="message" name="message" rows="4"
                 class="w-full px-4 py-3 border border-stone/60 rounded-lg text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-colors resize-none"
                 placeholder="Size, timeline, any special requests…"></textarea>
+            </div>
+
+            <!-- Spam trap: hidden from people, bots fill it in -->
+            <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+              <label for="company_website">Leave this field empty</label>
+              <input id="company_website" name="company_website" type="text" tabindex="-1" autocomplete="off">
             </div>
 
             <!-- Error message -->
@@ -1029,8 +1037,18 @@
     const SUBMIT_EMAIL = 'info@paynterconstruction.com';
     const GHL_WEBHOOK  = 'https://services.leadconnectorhq.com/hooks/tYXnDMjIvOfuo3Y6UNKw/webhook-trigger/3c38ac75-80c4-4044-a93f-c47170e489f6';
 
+    // Spam guard: bots fill the hidden field or submit within seconds of page load.
+    // Silently show success to them and send nothing, so a bot flood never reaches the CRM.
+    const FORM_LOADED_AT = Date.now();
+
     document.getElementById('estimate-form').addEventListener('submit', async function(e) {
       e.preventDefault();
+
+      if (document.getElementById('company_website').value || Date.now() - FORM_LOADED_AT < 3000) {
+        this.style.display = 'none';
+        document.getElementById('form-success').classList.remove('hidden');
+        return;
+      }
 
       const form      = this;
       const submitBtn = document.getElementById('submit-btn');
